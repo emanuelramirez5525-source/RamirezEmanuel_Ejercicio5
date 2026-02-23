@@ -2,7 +2,7 @@
 
 Console.WriteLine("MENU");
 Console.WriteLine("1 Empleo Fijo");
-Console.WriteLine("2  Temporal");
+Console.WriteLine("2 Temporal");
 Console.WriteLine("3 Independiente");
 Console.WriteLine("4 Estudiante");
 
@@ -58,8 +58,6 @@ else if (historial == 4)
         decision = "Rechazado";
         motivo = "Historial credito malo";
     }
-
-
 }
 
 else
@@ -136,7 +134,7 @@ else
         case 4:
             if (fiador == "S")
             {
-                if (monto < 3000)
+                if (monto <=3000)
                 {
                     decision = "Aprobado con condiciones";
                     motivo = "Prestamo estudiantil con fiador";
@@ -162,7 +160,8 @@ else
 
     }
 
-
 }
-
+Console.WriteLine("Resultado de Evaluacion");
+Console.WriteLine("Decision: "+decision);
+Console.WriteLine("Motivo principal: "+motivo);
 
