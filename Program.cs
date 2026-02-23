@@ -68,20 +68,93 @@ else
     {
 
         case 1:
+            if (antiguedad >= 12)
+            {
+                if (ingreso >= monto * 0.30)
+                {
+                    decision = "Aprobado";
+                    motivo = "Estabilidad laboral suficiente";
+                }
+                else
+                {
+                    decision = "Aprobado con condiciones";
+                    motivo = "Ingreso justo para el monto";
+                }
+            }
+
+            else
+            {
+                decision = "Aprobado con condiciones";
+                motivo = "Poca antiguedad laboral";
+            }
 
             break;
 
         case 2:
 
+            if (antiguedad >= 18)
+            {
+                if (fiador == "S")
+                {
+                    decision = "Aprobado con condiciones";
+                    motivo = "Contratado temporal respaldado por fiador";
+                }
+                else
+                {
+                    decision = "Rechazado";
+                    motivo = "Contrato temporal sin respaldo";
+                }
+            }
+            else
+            {
+                decision = "Rechazado";
+                motivo = "Muy poca estabilidad laboral";
+            }
             break;
 
         case 3:
-
-            break;
+            if (ingreso >= monto * 0.50)
+            {
+                if (antiguedad >= 24)
+                {
+                    decision = "Aprobado";
+                    motivo = "Actividad independiente";
+                }
+                else
+                {
+                    decision = "Aprobado con condiciones";
+                    motivo = "Ingreso alto pero antiguedad";
+                }
+            }
+            else
+            {
+                decision = "Rechazado";
+                motivo = "Ingreso insuficiente para independiente";
+            }
+                break;
 
         case 4:
+            if (fiador == "S")
+            {
+                if (monto < 3000)
+                {
+                    decision = "Aprobado con condiciones";
+                    motivo = "Prestamo estudiantil con fiador";
+                }
+                else
+                {
+                    decision = "Rechazado";
+                    motivo = "Monto alto para perfil estudiantil";
+                }
+            }
 
-            break;
+            else
+            {
+                decision = "Rechazado";
+                motivo = "Estudiante sin fiador";
+            }
+
+                break;
 
         default:
             Console.WriteLine("Tipo de solicitud invalida");
