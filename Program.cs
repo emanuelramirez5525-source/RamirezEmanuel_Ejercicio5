@@ -1,5 +1,4 @@
 ﻿// 5) Evaluación de préstamo bancario por reglas
-string aprobado = "";
 
 Console.WriteLine("MENU");
 Console.WriteLine("1 Empleo Fijo");
@@ -28,5 +27,69 @@ int historial =  int.Parse(Console.ReadLine());
 
 Console.WriteLine("Tiene fiador? (S/N)");
 string fiador = Console.ReadLine().ToUpper();
+
+string decision = "Rechazado";
+string motivo = "";
+
+if (ingreso <= 0 || monto <= 0 || antiguedad < 0)
+{
+    Console.WriteLine("Datos Invalidos");
+}
+
+else if (historial == 4)
+{
+    if (fiador == "S")
+    {
+        if (monto  <= 5000)
+        {
+            decision = "Aprobado con condiciones";
+            motivo = "Historial malo compensado con fiador";
+        }
+
+        else
+        {
+            decision = "Rechazado";
+            motivo = "Monto alto con historial";
+        }
+    }
+
+    else
+    {
+        decision = "Rechazado";
+        motivo = "Historial credito malo";
+    }
+
+
+}
+
+else
+{
+    switch (tipo)
+    {
+
+        case 1:
+
+            break;
+
+        case 2:
+
+            break;
+
+        case 3:
+
+            break;
+
+        case 4:
+
+            break;
+
+        default:
+            Console.WriteLine("Tipo de solicitud invalida");
+            break;
+
+    }
+
+
+}
 
 
